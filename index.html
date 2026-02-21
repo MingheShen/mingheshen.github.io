@@ -85,27 +85,14 @@
               Ananth Balashankar, Carsten Gerner-Beuerle, Miguel R. D. Rodrigues
               <br>
               <sup>†</sup> Equal contribution.
+			  <br>
               ICLR, 2026
               <br>
               <br>
               <a href="https://www.arxiv.org/abs/2601.20913">[Paper]</a>
               <!-- <a href="https://2j472no.github.io/xNet/">[Project]</a> -->
               <br>
-              <p> Reliable certification of Large Language Models (LLMs)—verifying that failure
-              rates are below a safety threshold—is critical yet challenging. While "LLM-asa-Judge" offers scalability, judge imperfections, noise, and bias can invalidate
-              statistical guarantees. We introduce a "Noisy but Valid" hypothesis testing framework to address this. By leveraging a small human-labelled calibration set to
-              estimate the judge's True Positive and False Positive Rates (TPR/FPR), we derive
-              a variance-corrected critical threshold applied to a large judge-labelled dataset.
-              Crucially, our framework theoretically guarantees finite-sample Type-I error control (validity) despite calibration uncertainty. This distinguishes our work from
-              Prediction-Powered Inference (PPI), positioning our method as a diagnostic tool
-              that explicitly models judge behavior rather than a black-box estimator. Our contributions include: (1) Theoretical Guarantees: We derive the exact conditions under
-              which noisy testing yields higher statistical power than direct evaluation; (2) Empirical Validation: Experiments on Jigsaw Comment, Hate Speech and SafeRLHF
-              confirm our theory; (3) The Oracle Gap: We reveal a significant performance gap
-              between practical methods and the theoretical "Oracle" (perfectly known judge
-              parameters), quantifying the cost of estimation. Specifically, we provide the first
-              systematic treatment of the imperfect-judge setting, yielding interpretable diagnostics of judge reliability and clarifying how evaluation power depends on judge
-              quality, dataset size, and certification levels. Together, these results sharpen understanding of statistical evaluation with LLM judges, and highlight trade-offs among
-              competing inferential tools.</p>
+              <p> We introduce a “Noisy but Valid” testing framework that uses a small human-labeled calibration set to estimate judge error rates and applies a variance-corrected threshold to large judge-labeled data. Our method guarantees finite-sample Type-I error control despite calibration uncertainty. We provide theoretical conditions for improved power, empirical validation on benchmark datasets, and quantify the gap to an ideal “Oracle” judge—offering the first systematic treatment of certification with imperfect LLM evaluators. </p>
             </td>
           </tr>
 
@@ -123,7 +110,7 @@
               <a href="https://ieeexplore.ieee.org/document/10445137">[Paper]</a>
               <!-- <a href="https://github.com/ICSResearch/LP">[Code]</a> -->
               <br>
-              <p> Image compressed sensing (ICS) has been extensively applied in various imaging domains due to its capability to sample and reconstruct images at subNyquist sampling rates. The current predominant approaches in ICS, specifically pure convolutional networks (ConvNets)-based ICS methods, have demonstrated their effectiveness in capturing local features for image recovery. Simultaneously, the Transformer architecture has gained significant attention due to its capability to model global correlations among image features. Motivated by these insights, we propose a novel hybrid network for ICS, named MTC-CSNet, which effectively combines the strengths of both ConvNets and Transformer architectures in capturing local and global image features to achieve high-quality image recovery. Particularly, MTC-CSNet is a dual-path framework that consists of a ConvNets-based recovery branch and a Transformer-based recovery branch. Along the ConvNets-based recovery branch, we design a lightweight scheme to capture the local features in natural images. Meanwhile, we implement a Transformer-based recovery branch to iteratively model the global dependencies among image patches. Ultimately, the ConvNets-based and Transformer-based recovery branches collaborate through a bridging unit, facilitating the adaptive transmission and fusion of informative features for image reconstruction. Extensive experimental results demonstrate that our proposed MTC-CSNet surpasses the state-of-the-art methods on various public datasets. The code and models are publicly available at MTC-CSNet. </p>
+              <p> We propose MTC-CSNet, a hybrid dual-path framework combining a lightweight ConvNet branch for local feature extraction and a Transformer branch for global correlation modeling. A bridging unit adaptively fuses both features for high-quality reconstruction. </p>
             </td>
           </tr>
 
@@ -141,25 +128,7 @@
               <a href="https://ieeexplore.ieee.org/document/10049603">[Paper]</a>
               <!-- <a href="https://github.com/ICSResearch/LP">[Code]</a> -->
               <br>
-              <p> The convolutional neural network (CNN)-based reconstruction methods have dominated the compressive sensing
-              (CS) in recent years. However, existing CNN-based approaches
-              show potential restrictions in capturing non-local similarity of images, because of the intrinsic characteristic of convolutional layers,
-              i.e., locality and weight sharing. In parallel, the emerging Transformer architecture shows fine capacity in modeling long-distance
-              correlations onto embedded tokens for language and images. Yet
-              vanilla Transformer does not exceed CNN-based networks considerably but shows roughly comparable performance, and the culprit
-              can be the missing of sophisticated inductive bias regarding the
-              local image structures. In this article, to eliminate the restrictions
-              of the aforementioned paradigms, we propose a Transformer-based
-              hierarchical framework, dubbed TCS-Net, for compressive image
-              sensing (or image compressive sensing) with a patch-to-pixel
-              manner. Concretely, the proposed TCS-Net consists of an image
-              acquisition module and a reconstruction module (includes two key
-              decoding phases: a patch-wise decoding phase and a pixel-wise decoding phase). The acquisition module can implement data-driven
-              image sampling by jointly learning with the decoding phases. By adjusting the Transformer architecture to the patch-to-pixel
-              multi-stage pattern, our reconstruction module can gradually decode the CS measurements from the patch-wise outlines to the pixelwise textures, thereby building a high-precision mapping for image
-              reconstruction. Extensive experiments on several datasets verify
-              that the proposed TCS-Net outperforms existing state-of-the-art
-              image CS methods by considerable margins. </p>
+              <p> We propose TCS-Net, a hierarchical Transformer-based framework for image CS using a patch-to-pixel strategy. It includes a learnable acquisition module and a multi-stage reconstruction module that progressively decodes measurements from patch-level structure to pixel-level details. </p>
             </td>
           </tr>
 
@@ -177,8 +146,7 @@
               <a href="https://ieeexplore.ieee.org/document/9934025">[Paper]</a>
               <!-- <a href="https://github.com/ICSResearch/LP">[Code]</a> -->
               <br>
-              <p> Well-known compressed sensing (CS) is widely used in image acquisition and reconstruction. However, accurately reconstructing images from measurements at low sampling rates remains a considerable challenge. In this paper, we propose a novel Transformer-based hybrid architecture (dubbed TransCS) to achieve high-quality image CS. In the sampling module, TransCS adopts a trainable sensing matrix strategy that gains better image reconstruction by learning the structural information from the training images. In the reconstruction module, inspired by the powerful long-distance dependence modelling capacity of the Transformer, a customized iterative shrinkage-thresholding algorithm (ISTA)-based Transformer backbone that iteratively works with gradient descent and soft threshold operation is designed to model the global dependency among image subblocks. Moreover, the auxiliary convolutional neural network (CNN) is introduced to capture the local features of images. Therefore, the proposed hybrid architecture that integrates the customized ISTA-based Transformer backbone with CNN can gain high-performance reconstruction for image compressed sensing. The experimental results demonstrate that our proposed TransCS obtains superior reconstruction quality and noise robustness on several public benchmark datasets compared with other state-of-the-art methods. Our code is available on TransCS. </p>
-            </td>
+              <p> We propose TransCS, a Transformer-based hybrid framework for high-quality image CS. It uses a trainable sensing matrix for data-driven sampling and a customized ISTA-based Transformer backbone to model global dependencies during iterative reconstruction. An auxiliary CNN captures local image features. </p>
           </tr>
 
           <tr>
